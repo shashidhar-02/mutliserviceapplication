@@ -1,0 +1,184 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.App-header {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.App-header h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.App-header p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.App-main {
+  padding: 0 2rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.add-item-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.add-item-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.add-item-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item-input {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 300px;
+  background: white;
+  color: #333;
+}
+
+.item-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.add-button {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background: #45a049;
+}
+
+.items-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.items-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.item-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.item-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.timestamp {
+  margin: 0 0 1rem 0;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.delete-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background: #d32f2f;
+}
+
+.loading, .error, .no-items {
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #ffcdd2;
+  background: rgba(244, 67, 54, 0.2);
+  border-radius: 8px;
+}
+
+.loading {
+  opacity: 0.7;
+}
+
+.no-items {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .add-item-form {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item-input {
+    min-width: 250px;
+  }
+  
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+}

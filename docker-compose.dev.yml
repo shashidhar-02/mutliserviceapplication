@@ -1,0 +1,45 @@
+version: '3.8'
+
+# Development override for docker-compose.yml
+services:
+  api-service:
+    build:
+      context: ./api-service
+      dockerfile: Dockerfile.dev
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ./api-service:/app
+      - /app/node_modules
+    command: npm run dev
+
+  web-app:
+    build:
+      context: ./web-app
+      dockerfile: Dockerfile.dev
+    environment:
+      REACT_APP_API_URL: http://localhost:3000
+    volumes:
+      - ./web-app/src:/app/src
+      - ./web-app/public:/app/public
+    ports:
+      - "3002:3000"
+    command: npm start
+
+  # Add development tools
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - backend-network
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    environment:
+      REDIS_HOSTS: "local:redis:6379"
+    ports:
+      - "8081:8081"
+    networks:
+      - backend-network
